@@ -1,7 +1,7 @@
 # Spotify Stats Dashboard
 
-[![Fork on GitHub](https://img.shields.io/github/forks/YOUR_USERNAME/spotify-stats?style=social)](https://github.com/YOUR_USERNAME/spotify-stats/fork)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/spotify-stats)
+[![Fork on GitHub](https://img.shields.io/github/forks/SyrymAbdikhan/spotify-stats?style=social)](https://github.com/SyrymAbdikhan/spotify-stats/fork)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/SyrymAbdikhan/spotify-stats)
 
 A client-side Spotify statistics dashboard built with Vue 3, showing your top artists, top tracks, and listening history. Powered by the Spotify Web API with OAuth 2.0 PKCE flow (no backend required).
 
@@ -59,7 +59,7 @@ Open [http://localhost:5173](http://localhost:5173)
 
 ## Deploy to Vercel
 
-1. [Fork this repo](https://github.com/YOUR_USERNAME/spotify-stats/fork)
+1. [Fork this repo](https://github.com/SyrymAbdikhan/spotify-stats/fork)
 2. Import on [vercel.com/new](https://vercel.com/new)
 3. Add environment variables in the Vercel dashboard:
    - `VITE_SPOTIFY_CLIENT_ID` — your Spotify Client ID
