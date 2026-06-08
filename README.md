@@ -15,6 +15,17 @@ A client-side Spotify statistics dashboard built with Vue 3, showing your top ar
 - **Skeleton loaders** on all async data
 - **Dark theme** with Spotify green accents, fully responsive
 
+## Screenshots
+
+**Login**
+![Login](docs/screenshots/login.png)
+
+**Dashboard**
+![Dashboard](docs/screenshots/overview.png)
+
+**Artist Detail**
+![Artist Detail](docs/screenshots/artist-details.png)
+
 ## Tech Stack
 
 - [Vue 3](https://vuejs.org/) (Composition API)
