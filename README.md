@@ -1,6 +1,5 @@
 # Spotify Stats Dashboard
 
-[![Fork on GitHub](https://img.shields.io/github/forks/SyrymAbdikhan/spotify-stats?style=social)](https://github.com/SyrymAbdikhan/spotify-stats/fork)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/SyrymAbdikhan/spotify-stats)
 
 A client-side Spotify statistics dashboard built with Vue 3, showing your top artists, top tracks, and listening history. Powered by the Spotify Web API with OAuth 2.0 PKCE flow (no backend required).
@@ -20,9 +19,9 @@ A client-side Spotify statistics dashboard built with Vue 3, showing your top ar
 
 - [Vue 3](https://vuejs.org/) (Composition API)
 - [Pinia](https://pinia.vuejs.org/) — state management with caching
-- [Vue Router 4](https://router.vuejs.org/) — protected routes
-- [Vite 5](https://vitejs.dev/) — build tool
-- [Tailwind CSS v3](https://tailwindcss.com/) — styling
+- [Vue Router 5](https://router.vuejs.org/) — protected routes
+- [Vite 8](https://vitejs.dev/) — build tool
+- [Tailwind CSS v4](https://tailwindcss.com/) — styling
 
 ## Local Setup
 
