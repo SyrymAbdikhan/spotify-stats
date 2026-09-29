@@ -1,6 +1,6 @@
 <template>
   <!-- Mobile top bar -->
-  <header class="lg:hidden fixed top-0 inset-x-0 z-30 bg-spotify-dark border-b border-white/10 flex items-center justify-between px-4 h-14">
+  <header class="lg:hidden fixed top-0 inset-x-0 z-50 bg-spotify-dark border-b border-white/10 flex items-center justify-between px-4 h-14">
     <RouterLink to="/dashboard" class="flex items-center gap-2">
       <SpotifyIcon class="w-6 h-6 text-spotify-green" />
       <span class="font-bold text-sm">Spotify Stats</span>
@@ -15,7 +15,7 @@
 
   <!-- Mobile overlay menu -->
   <Transition name="slide">
-    <nav v-if="menuOpen" class="lg:hidden fixed inset-0 z-20 bg-spotify-dark pt-14 px-4 pb-6 flex flex-col">
+    <nav v-if="menuOpen" class="lg:hidden fixed inset-0 z-40 bg-spotify-dark pt-14 px-4 pb-6 flex flex-col">
       <NavLinks @navigate="menuOpen = false" />
       <div class="mt-auto">
         <UserProfile />

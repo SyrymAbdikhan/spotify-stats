@@ -22,7 +22,8 @@ export const useAuthStore = defineStore('auth', () => {
   const userProfile = ref(JSON.parse(localStorage.getItem('spotify_user') || 'null'))
 
   const isAuthenticated = computed(() => {
-    return !!accessToken.value && Date.now() < (expiresAt.value || 0)
+    if (!accessToken.value) return false
+    return Date.now() < (expiresAt.value || 0) || !!refreshToken.value
   })
 
   async function login() {
@@ -74,7 +75,7 @@ export const useAuthStore = defineStore('auth', () => {
     sessionStorage.removeItem('pkce_verifier')
     sessionStorage.removeItem('pkce_state')
 
-    await fetchProfile()
+    try { await fetchProfile() } catch { /* ignore */ }
   }
 
   async function refreshAccessToken() {

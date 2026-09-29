@@ -15,7 +15,7 @@
 
     <template v-else>
       <!-- banner -->
-      <div class="group relative rounded-2xl overflow-hidden mb-8 bg-spotify-dark">
+      <div class="group relative rounded-2xl overflow-hidden mb-8 bg-spotify-dark isolate">
         <div v-if="loadingArtist" class="h-72 skeleton" />
         <template v-else>
           <!-- pfp backdrop -->
