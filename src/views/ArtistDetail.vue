@@ -153,7 +153,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStatsStore } from '@/stores/stats'
 import TrackRow from '@/components/TrackRow.vue'
@@ -200,9 +200,9 @@ async function load(id) {
   }
 }
 
+function onKeyDown(e) { if (e.key === 'Escape') lightboxOpen.value = false }
+
 watch(() => route.params.id, (id) => { expanded.value = false; lightboxOpen.value = false; load(id) })
-onMounted(() => {
-  load(route.params.id)
-  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightboxOpen.value = false })
-})
+onMounted(() => { load(route.params.id); window.addEventListener('keydown', onKeyDown) })
+onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
 </script>

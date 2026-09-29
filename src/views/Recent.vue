@@ -98,7 +98,10 @@ function formatDuration(ms) {
 }
 
 onMounted(async () => {
-  items.value = await stats.fetchRecentlyPlayed(50)
-  loading.value = false
+  try {
+    items.value = await stats.fetchRecentlyPlayed(50)
+  } finally {
+    loading.value = false
+  }
 })
 </script>

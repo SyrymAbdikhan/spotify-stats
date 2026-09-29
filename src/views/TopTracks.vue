@@ -35,8 +35,11 @@ const loading = ref(true)
 
 async function load() {
   loading.value = true
-  tracks.value = await stats.fetchTopTracks(timeRange.value, 50)
-  loading.value = false
+  try {
+    tracks.value = await stats.fetchTopTracks(timeRange.value, 50)
+  } finally {
+    loading.value = false
+  }
 }
 
 watch(timeRange, load)

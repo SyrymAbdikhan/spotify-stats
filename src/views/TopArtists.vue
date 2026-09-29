@@ -34,8 +34,11 @@ const loading = ref(true)
 
 async function load() {
   loading.value = true
-  artists.value = await stats.fetchTopArtists(timeRange.value, 50)
-  loading.value = false
+  try {
+    artists.value = await stats.fetchTopArtists(timeRange.value, 50)
+  } finally {
+    loading.value = false
+  }
 }
 
 watch(timeRange, load)

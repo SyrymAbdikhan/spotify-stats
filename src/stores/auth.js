@@ -126,7 +126,7 @@ export const useAuthStore = defineStore('auth', () => {
     localStorage.setItem('spotify_expires_at', String(expiresAt.value))
   }
 
-  async function spotifyGet(path) {
+  async function spotifyGet(path, retry = true) {
     if (!isAuthenticated.value && refreshToken.value) {
       await refreshAccessToken()
     }
@@ -135,9 +135,9 @@ export const useAuthStore = defineStore('auth', () => {
       headers: { Authorization: `Bearer ${accessToken.value}` }
     })
 
-    if (res.status === 401) {
+    if (res.status === 401 && retry) {
       await refreshAccessToken()
-      return spotifyGet(path)
+      return spotifyGet(path, false)
     }
 
     if (!res.ok) throw new Error(`Spotify API error: ${res.status}`)

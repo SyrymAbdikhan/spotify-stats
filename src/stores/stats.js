@@ -51,17 +51,15 @@ export const useStatsStore = defineStore('stats', () => {
           `/me/top/tracks?time_range=long_term&limit=${limit}&offset=${longTermFull.value.length}`
         )
         const items = data.items || []
-        // extending the longTermFull array with the new items
         longTermFull.value = [...longTermFull.value, ...items]
-        if (items.length < limit) break  // no more tracks
+        if (items.length < limit) break
       }
-    } finally {
-      longTermFetching.value = false
       longTermFullDone.value = true
-      // populating the standard 50-item cache if empty
       if (!topTracks.value['long_term'] && longTermFull.value.length) {
         topTracks.value['long_term'] = longTermFull.value.slice(0, 50)
       }
+    } finally {
+      longTermFetching.value = false
     }
   }
 
